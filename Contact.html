@@ -2,41 +2,104 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Contact Me</title>
-<link rel="stylesheet" href="styles.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | Koushik</title>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(120deg, #0a192f, #172a46);
+        color: white;
+    }
+    .container {
+        width: 90%;
+        max-width: 500px;
+        margin: 80px auto;
+        padding: 30px;
+        background: rgba(255,255,255,0.08);
+        border-radius: 15px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    }
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        letter-spacing: 2px;
+        color: #00eaff;
+    }
+    label {
+        display: block;
+        margin-top: 15px;
+        font-size: 14px;
+        color: #c8e8ff;
+    }
+    input, textarea {
+        width: 100%;
+        padding: 12px;
+        margin-top: 8px;
+        border: none;
+        border-radius: 10px;
+        background: rgba(255,255,255,0.2);
+        color: white;
+        font-size: 14px;
+        outline: none;
+    }
+    textarea {
+        height: 120px;
+    }
+    button {
+        width: 100%;
+        margin-top: 20px;
+        padding: 12px;
+        border: none;
+        border-radius: 10px;
+        background: #00eaff;
+        color: #09192f;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    button:hover {
+        background: #07c2d1;
+    }
+    .social {
+        margin-top: 25px;
+        text-align: center;
+    }
+    .social a {
+        color: #00eaff;
+        margin: 0 10px;
+        text-decoration: none;
+        font-size: 18px;
+    }
+</style>
 </head>
 <body>
 
-<header>
-    <h1>Contact Me</h1>
-    <nav>
-        <a href="index.html">Home</a> |
-        <a href="about.html">About</a> |
-        <a href="posts.html">Blog</a> |
-        <a href="contact.html">Contact</a>
-    </nav>
-</header>
-
-<section class="content">
-    <h2>Get in Touch</h2>
-
-    <form>
+<div class="container">
+    <h2>Contact Me</h2>
+    
+    <form action="https://formsubmit.co/koushikatth@gmail.com" method="POST">
         <label>Your Name</label>
-        <input type="text" placeholder="Enter your name" required>
+        <input type="text" name="name" required placeholder="Enter your name">
 
-        <label>Your Email</label>
-        <input type="email" placeholder="Enter your email" required>
+        <label>Email Address</label>
+        <input type="email" name="email" required placeholder="example@mail.com">
 
-        <label>Message</label>
-        <textarea rows="5" placeholder="Write your message..." required></textarea>
-
+        <label>Your Message</label>
+        <textarea name="message" required placeholder="Write something..."></textarea>
+        
         <button type="submit">Send Message</button>
     </form>
-</section>
 
-<footer>
-    <p>© 2025 Koushik's Blog | Designed by Koushik</p>
-</footer>
+    <div class="social">
+        📞 +91 00000 00000 | ✉️ koushikatth@gmail.com  
+        <br><br>
+        <a href="#">Instagram</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">Portfolio</a>
+    </div>
+</div>
 
 </body>
 </html>
