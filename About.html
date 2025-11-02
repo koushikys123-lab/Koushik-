@@ -1,101 +1,241 @@
-<!DOCTYPE html>
+<!--
+  Unique Free Single-File Template
+  - Save as: index.html
+  - To publish on GitHub Pages place this at repository root.
+  - To make contact form work: replace FORM_ACTION with your Formspree URL
+    (or use mailto: youremail@example.com)
+-->
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About Me - Koushik</title>
-<style>
-body {
-    font-family: "Poppins", sans-serif;
-    margin: 0;
-    background: #f6f9fc;
-    color: #222;
-}
-header {
-    background: #3b82f6;
-    padding: 18px;
-    text-align: center;
-    color: white;
-    font-size: 22px;
-    font-weight: bold;
-}
-nav {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    padding: 15px;
-    background: white;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-nav a {
-    text-decoration: none;
-    color: #3b82f6;
-    font-weight: 600;
-    padding: 8px 15px;
-    border-radius: 20px;
-    transition: 0.3s;
-}
-nav a:hover {
-    background: #3b82f6;
-    color: white;
-}
-.container {
-    max-width: 600px;
-    margin: auto;
-    padding: 25px;
-    text-align: center;
-}
-img.profile {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    border: 4px solid #3b82f6;
-    margin-bottom: 20px;
-}
-h2 {
-    font-size: 26px;
-    color: #111;
-    margin-bottom: 10px;
-}
-p {
-    line-height: 1.6;
-    font-size: 16px;
-}
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Koushik — Personal Blog</title>
+  <meta name="description" content="Koushik - HR, learning, growth. Personal blog and portfolio." />
+
+  <!-- Google fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;700&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --muted:#9aa8bc;
+      --accent:#06b6d4;
+      --accent-2:#7c3aed;
+      --glass: rgba(255,255,255,0.03);
+      --white: #f7fbff;
+      --radius:14px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Poppins,system-ui,Arial; background:
+      radial-gradient(1200px 600px at 10% 10%, rgba(12,34,61,0.18), transparent 6%),
+      linear-gradient(180deg,#071129 0%, #071430 100%); color:var(--white); -webkit-font-smoothing:antialiased}
+    a{color:inherit}
+    .wrap{max-width:980px;margin:28px auto;padding:20px}
+    header.site{
+      display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 16px;background:linear-gradient(90deg,var(--glass),transparent);border-radius:12px;border:1px solid rgba(255,255,255,0.04);
+      backdrop-filter: blur(6px)
+    }
+    .brand {display:flex;align-items:center;gap:12px}
+    .logo{
+      width:56px;height:56px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:700;color:#021018;
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      box-shadow:0 8px 30px rgba(12,34,61,0.6)
+    }
+    .brand h1{margin:0;font-size:1.1rem}
+    .brand p{margin:0;font-size:0.82rem;color:var(--muted)}
+
+    nav.top-nav{display:flex;gap:8px;align-items:center}
+    .btn{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px 12px;border-radius:10px;color:var(--white);cursor:pointer;font-weight:600}
+    .btn.ghost{background:transparent}
+    .hero{
+      margin-top:20px;padding:28px;border-radius:var(--radius);background:
+      linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+      border:1px solid rgba(255,255,255,0.04);display:flex;gap:18px;align-items:center;flex-wrap:wrap;
+      box-shadow:0 10px 30px rgba(2,6,23,0.6)
+    }
+    .hero-left{flex:1;min-width:240px}
+    .hero-right{width:160px;text-align:center}
+    .hero h2{margin:0;font-size:1.6rem}
+    .hero p.lead{color:var(--muted);margin:10px 0 0}
+    .profile-pic{
+      width:120px;height:120px;border-radius:18px;object-fit:cover;border:4px solid rgba(255,255,255,0.06);
+      box-shadow:0 12px 30px rgba(2,6,23,0.6)
+    }
+
+    main{display:grid;grid-template-columns: 1fr 320px;gap:22px;margin-top:20px}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+    .posts .post{padding:14px;border-radius:10px;margin-bottom:12px;background:linear-gradient(180deg,rgba(255,255,255,0.01),transparent)}
+    .post h3{margin:0;font-size:1.05rem}
+    .meta{font-size:0.82rem;color:var(--muted);margin-top:8px}
+    .excerpt{margin-top:8px;color:#d7e6f5}
+
+    aside.sidebar .search input{width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--white)}
+    .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+    .tag{padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.02);cursor:pointer;color:var(--muted);font-weight:600}
+
+    footer{margin-top:28px;text-align:center;color:var(--muted);font-size:0.9rem}
+
+    /* small screen */
+    @media (max-width:980px){main{grid-template-columns:1fr} .hero-right{display:none}}
+
+    /* subtle animations */
+    .fade-in{animation:fadeIn .7s both}
+    @keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+    /* contact form */
+    form label{display:block;margin:8px 0 6px;font-size:0.9rem;color:var(--muted)}
+    input[type="text"], input[type="email"], textarea{
+      width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--white);resize:vertical
+    }
+    button.primary{
+      margin-top:10px;background:linear-gradient(90deg,var(--accent),var(--accent-2));border:0;padding:12px 14px;border-radius:10px;color:#021018;font-weight:700;cursor:pointer
+    }
+
+    /* neat blog layout for large screens posts */
+    .post-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    @media (max-width:680px){.post-grid{grid-template-columns:1fr}}
+
+    /* small visual tweaks */
+    h2.section-title{margin:0 0 8px;color:var(--white);font-family:Merriweather,serif}
+    .muted{color:var(--muted);font-size:0.95rem}
+    .pill{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.03);font-weight:600}
+  </style>
 </head>
 <body>
+  <div class="wrap">
+    <header class="site fade-in">
+      <div class="brand">
+        <div class="logo">K</div>
+        <div>
+          <h1>Koushik</h1>
+          <p class="muted">HR • Learning • Growth</p>
+        </div>
+      </div>
+      <nav class="top-nav">
+        <button class="btn" onclick="scrollToSection('home')">Home</button>
+        <button class="btn" onclick="scrollToSection('about')">About</button>
+        <button class="btn" onclick="scrollToSection('posts')">Posts</button>
+        <button class="btn" onclick="scrollToSection('contact')">Contact</button>
+      </nav>
+    </header>
 
-<header>Koushik — About Me</header>
+    <section id="home" class="hero fade-in" aria-label="Hero">
+      <div class="hero-left">
+        <h2>Welcome — I’m <span style="color:var(--accent)">Koushik</span></h2>
+        <p class="lead">Sharing short lessons on career, English learning, and daily growth. Small steps, big improvements.</p>
+        <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
+          <a class="pill" href="#posts">Latest Posts</a>
+          <a class="pill" href="#contact">Work with me</a>
+        </div>
+      </div>
+      <div class="hero-right">
+        <img class="profile-pic" src="https://via.placeholder.com/240" alt="Koushik profile">
+        <div style="margin-top:8px;font-weight:600;color:var(--muted)">HR Professional</div>
+      </div>
+    </section>
 
-<nav>
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="blog.html">Blog</a>
-<a href="contact.html">Contact</a>
-</nav>
+    <main>
+      <!-- MAIN CONTENT: POSTS -->
+      <section class="card posts" id="posts">
+        <h2 class="section-title">Latest posts</h2>
+        <p class="muted">Short, actionable posts to help you improve daily</p>
 
-<div class="container">
+        <!-- sample posts grid -->
+        <div class="post-grid" style="margin-top:12px">
+          <article class="post fade-in">
+            <h3>How I improved English by 10 minutes a day</h3>
+            <div class="meta">Jan 20, 2025 • <span class="pill">English</span></div>
+            <p class="excerpt">Tiny daily practices compound. I used a 10-minute plan that focused on listening, shadowing, and speaking — results came in 8 weeks.</p>
+          </article>
 
-<img class="profile" src="https://via.placeholder.com/120" alt="Your photo">
+          <article class="post fade-in">
+            <h3>3 HR habits that make leaders trust you</h3>
+            <div class="meta">Dec 05, 2024 • <span class="pill">Career</span></div>
+            <p class="excerpt">Short habits: clear follow-up, fair feedback, and consistent documentation build relationship capital with leaders and teams.</p>
+          </article>
+        </div>
 
-<h2>Hi, I'm Koushik 👋</h2>
+        <!-- more posts -->
+        <div style="margin-top:16px">
+          <article class="post fade-in">
+            <h3>Small wins: how to build momentum</h3>
+            <div class="meta">Nov 18, 2024 • <span class="pill">Growth</span></div>
+            <p class="excerpt">Celebrate the smallest wins. It rewires your brain for progress. Start with steps you can finish within 24 hours.</p>
+          </article>
+        </div>
 
-<p>
-I'm a passionate learner, HR enthusiast, and someone who loves exploring technology and personal growth. 
-Every day I learn, build, and grow — and through this space, I share my journey.
-</p>
+        <div style="margin-top:16px;text-align:center">
+          <a class="btn" href="posts.html">View all posts</a>
+        </div>
+      </section>
 
-<h2>My Journey 🌱</h2>
-<p>
-Whether it's motivation, career improvement, or communication skills — I'm always learning and evolving.
-</p>
+      <!-- SIDEBAR -->
+      <aside class="sidebar card">
+        <div style="margin-bottom:12px">
+          <h3 style="margin:0">About</h3>
+          <p class="muted" style="margin-top:6px">I'm Koushik — HR pro and a daily learner. I write short notes about career, English learning, and habits.</p>
+        </div>
 
-<h2>Purpose of This Website ✨</h2>
-<p>
-I started this blog to share knowledge, experiences & ideas — and hopefully inspire others along the way!
-</p>
+        <div style="margin-top:12px">
+          <h4 style="margin:0">Topics</h4>
+          <div class="tags">
+            <div class="tag">English</div>
+            <div class="tag">Career</div>
+            <div class="tag">Mindset</div>
+            <div class="tag">Learn</div>
+          </div>
+        </div>
 
-</div>
+        <div style="margin-top:12px">
+          <h4 style="margin:0">Subscribe</h4>
+          <p class="muted" style="margin-top:6px">Get short monthly updates</p>
+          <form onsubmit="subscribe(event)">
+            <input id="subs-email" type="email" placeholder="Email address" required>
+            <button type="submit" class="primary" style="width:100%">Subscribe</button>
+          </form>
+          <small id="subs-msg" class="muted" style="display:block;margin-top:8px"></small>
+        </div>
+      </aside>
+    </main>
 
-</body>
-</html>
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="card" style="margin-top:20px">
+      <h2 class="section-title">Contact</h2>
+      <p class="muted">Send a short message — I’ll reply to serious enquiries.</p>
+
+      <!-- Replace 'FORM_ACTION' with your form handler (Formspree or Netlify) -->
+      <form id="contact-form" onsubmit="sendMessage(event)" style="margin-top:12px">
+        <label>Name</label>
+        <input id="name" type="text" placeholder="Your name" required>
+        <label>Email</label>
+        <input id="email" type="email" placeholder="you@example.com" required>
+        <label>Message</label>
+        <textarea id="message" rows="4" placeholder="Write your message..." required></textarea>
+        <button type="submit" class="primary">Send Message</button>
+        <div id="form-status" class="muted" style="margin-top:8px"></div>
+      </form>
+    </section>
+
+    <footer>
+      <p>© <span id="year"></span> Koushik • Built with a free template</p>
+    </footer>
+  </div>
+
+  <script>
+    // small helpers
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function scrollToSection(id){
+      const el = document.getElementById(id);
+      if(!el) return;
+      el.scrollIntoView({behavior:'smooth',block:'start'});
+    }
+
+    // fake subscribe (client-side only) - replace with API if needed
+    function subscribe(e){
+      e.preventDefault();
+      const email = document.getElementById('subs-email').value;
+      const msg = document.getElementById('subs-msg');
+      // basic
